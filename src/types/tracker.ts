@@ -417,3 +417,32 @@ export type TrackerResponse = {
     };
     errors?: { message: string }[];
 };
+
+export interface Match {
+    id: string;
+    metadata: {
+        map: string;
+        mode: string;
+    };
+    stats: {
+        kills: number;
+        deaths: number;
+        assists: number;
+    };
+}
+
+export interface MatchesResponse {
+    data: {
+        matches: Match[];
+        metadata: {
+            schema: string;
+            next: string | null;
+        };
+        paginationType: string;
+        requestingPlayerAttributes: {
+            platformSlug: string;
+            platformUserIdentifier: string;
+        };
+        expiryDate: string;
+    };
+}

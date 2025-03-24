@@ -3,15 +3,14 @@ import { API } from './src/index';
 const test = async () => {
     try {
         const user = await API.fetchUser('iFraan_', 'G4G');
-        console.log('User:', user.info());
-        console.log('Ranked:', user.ranked());
         console.log('Unrated: ', user.unrated());
-        console.log('Agents: ', user.agents());
-        console.log('ALL GAMEMODES (including deathmatch, spike-rush, etc) ', user.gamemodes());
-        console.log('Raw: ', user.raw());
 
         const matches = await user.fetchMatches();
-        console.log('Matches:', matches);
+        console.log('Matches:', matches.data.matches);
+
+        matches.data.matches.forEach((match, index) => {
+            console.log(`Match ${index + 1}:`, match);
+        });
     } catch (e) {
         console.log(e);
     }

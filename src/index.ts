@@ -1,5 +1,5 @@
 import { exec } from 'child_process';
-import { BaseOptions, SegmentSeasonStats, TrackerResponse } from './types/tracker';
+import { BaseOptions, SegmentSeasonStats, TrackerResponse, MatchesResponse } from './types/tracker';
 import { AgentStats, GamemodesStats, SeasonStats, UserInfo } from './types/internal';
 
 const BASE_URL = `https://api.tracker.gg/api/v2/valorant/standard/profile/riot/{USERNAME}%23{TAG}`;
@@ -44,9 +44,9 @@ class API {
         return api;
     }
 
-    async fetchMatches() {
+    async fetchMatches(): Promise<MatchesResponse> {
         const matchesUrl = MATCHES_URL.replace('{TAG}', this.tag).replace('{USERNAME}', this.username);
-        const matches = await fetchData(matchesUrl);
+        const matches = await fetchData(matchesUrl) as MatchesResponse;
         return matches;
     }
 
@@ -68,7 +68,9 @@ class API {
     unrated(options: BaseOptions = {}) {
         const result = {} as SeasonStats;
         const raw = options.raw ?? false;
-        const data = this._raw.data.segments.find((x) => x.attributes?.playlist == 'unrated');
+        console.log(this._raw.data.segments); 
+        const data = this._raw.data.segments.find((x) => x.attributes?.playlist === 'unrated' || x.metadata?.name === 'Unrated');
+        
         if (raw) {
             result._raw = data;
         }
@@ -139,6 +141,6 @@ class API {
 }
 
 export {
-    API as VAPI, // compability
+    API as VAPI, // compatibility
     API,
 };

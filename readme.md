@@ -522,6 +522,291 @@ try {
         }
     }
     */
+    console.log('Matches: ', matches())
+    /*
+    Matches: [
+  {
+    attributes: {
+      id: '8f9bb7cf-d95a-4cd5-bc55-9f12e2046e7e',
+      mapId: '/Game/Maps/Port/Port',
+      modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+      seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+    },
+    metadata: {
+      modeKey: 'bomb',
+      modeName: 'Competitive',
+      modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+      modeMaxRounds: 25,
+      isAvailable: true,
+      timestamp: '2025-03-09T03:58:44.888+00:00',
+      result: 'victory',
+      map: 'e2ad5c54-4114-a870-9641-8ea21279579a',
+      mapName: 'Icebox',
+      mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg',
+      seasonName: 'V25: A2'
+    },
+    segments: [ [Object] ],
+    streams: null,
+    expiryDate: '0001-01-01T00:00:00+00:00'
+  },
+  {
+    attributes: {
+      id: 'eb7dbc87-c448-4a59-8c5f-370fcf67920c',
+      mapId: '/Game/Maps/Jam/Jam',
+      modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+      seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+    },
+    metadata: {
+      modeKey: 'bomb',
+      modeName: 'Competitive',
+      modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+      modeMaxRounds: 25,
+      isAvailable: true,
+      timestamp: '2025-03-09T03:26:17.03+00:00',
+      result: 'defeat',
+      map: '2fe4ed3a-450a-948b-6d6b-e89a78e680a9',
+      mapName: 'Lotus',
+      mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg',
+      seasonName: 'V25: A2'
+    },
+    segments: [ [Object] ],
+    streams: null,
+    expiryDate: '0001-01-01T00:00:00+00:00'
+  },
+  {
+    attributes: {
+      id: 'af075cfd-09ac-4603-a0d8-d0931e515cb5',
+      mapId: '/Game/Maps/Ascent/Ascent',
+      modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+      seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+    },
+    metadata: {
+      modeKey: 'bomb',
+      modeName: 'Competitive',
+      modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+      modeMaxRounds: 25,
+      isAvailable: true,
+      timestamp: '2025-03-09T02:42:34.934+00:00',
+      result: 'victory',
+      map: '7eaecc1b-4337-bbf6-6ab9-04b8f06b3319',
+      mapName: 'Ascent',
+      mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg',
+      seasonName: 'V25: A2'
+    },
+    segments: [ [Object] ],
+    streams: null,
+    expiryDate: '0001-01-01T00:00:00+00:00'
+  },
+  {
+    attributes: {
+      id: 'f0aa69c8-e96b-4b37-8568-8d56a567db23',
+      mapId: '/Game/Maps/Port/Port',
+      modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+      seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+    },
+    metadata: {
+      modeKey: 'bomb',
+      modeName: 'Competitive',
+      modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+      modeMaxRounds: 25,
+      isAvailable: true,
+      timestamp: '2025-03-09T02:15:58.598+00:00',
+      result: 'victory',
+      map: 'e2ad5c54-4114-a870-9641-8ea21279579a',
+      mapName: 'Icebox',
+      mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg',
+      seasonName: 'V25: A2'
+    },
+    segments: [ [Object] ],
+    streams: null,
+    expiryDate: '0001-01-01T00:00:00+00:00'
+  },
+  {
+    attributes: {
+      id: '6c27f7ad-9dee-4c1e-ab18-5347481599f1',
+      mapId: '/Game/Maps/Pitt/Pitt',
+      modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+      seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+    },
+    metadata: {
+      modeKey: 'bomb',
+      modeName: 'Competitive',
+      modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+      modeMaxRounds: 25,
+      isAvailable: true,
+      timestamp: '2025-03-09T01:47:31.769+00:00',
+      result: 'defeat',
+      map: 'fd267378-4d1d-484f-ff52-77821ed10dc2',
+      mapName: 'Pearl',
+      mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg',
+      seasonName: 'V25: A2'
+    },
+    segments: [ [Object] ],
+    streams: null,
+    expiryDate: '0001-01-01T00:00:00+00:00'
+  }
+]
+Match 1: {
+  attributes: {
+    id: '8f9bb7cf-d95a-4cd5-bc55-9f12e2046e7e',
+    mapId: '/Game/Maps/Port/Port',
+    modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+    seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+  },
+  metadata: {
+    modeKey: 'bomb',
+    modeName: 'Competitive',
+    modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+    modeMaxRounds: 25,
+    isAvailable: true,
+    timestamp: '2025-03-09T03:58:44.888+00:00',
+    result: 'victory',
+    map: 'e2ad5c54-4114-a870-9641-8ea21279579a',
+    mapName: 'Icebox',
+    mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg',
+    seasonName: 'V25: A2'
+  },
+  segments: [
+    {
+      type: 'overview',
+      attributes: [Object],
+      metadata: [Object],
+      expiryDate: '0001-01-01T00:00:00+00:00',
+      stats: [Object]
+    }
+  ],
+  streams: null,
+  expiryDate: '0001-01-01T00:00:00+00:00'
+}
+Match 2: {
+  attributes: {
+    id: 'eb7dbc87-c448-4a59-8c5f-370fcf67920c',
+    mapId: '/Game/Maps/Jam/Jam',
+    modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+    seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+  },
+  metadata: {
+    modeKey: 'bomb',
+    modeName: 'Competitive',
+    modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+    modeMaxRounds: 25,
+    isAvailable: true,
+    timestamp: '2025-03-09T03:26:17.03+00:00',
+    result: 'defeat',
+    map: '2fe4ed3a-450a-948b-6d6b-e89a78e680a9',
+    mapName: 'Lotus',
+    mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/lotus.jpg',
+    seasonName: 'V25: A2'
+  },
+  segments: [
+    {
+      type: 'overview',
+      attributes: [Object],
+      metadata: [Object],
+      expiryDate: '0001-01-01T00:00:00+00:00',
+      stats: [Object]
+    }
+  ],
+  streams: null,
+  expiryDate: '0001-01-01T00:00:00+00:00'
+}
+Match 3: {
+  attributes: {
+    id: 'af075cfd-09ac-4603-a0d8-d0931e515cb5',
+    mapId: '/Game/Maps/Ascent/Ascent',
+    modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+    seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+  },
+  metadata: {
+    modeKey: 'bomb',
+    modeName: 'Competitive',
+    modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+    modeMaxRounds: 25,
+    isAvailable: true,
+    timestamp: '2025-03-09T02:42:34.934+00:00',
+    result: 'victory',
+    map: '7eaecc1b-4337-bbf6-6ab9-04b8f06b3319',
+    mapName: 'Ascent',
+    mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/ascent.jpg',
+    seasonName: 'V25: A2'
+  },
+  segments: [
+    {
+      type: 'overview',
+      attributes: [Object],
+      metadata: [Object],
+      expiryDate: '0001-01-01T00:00:00+00:00',
+      stats: [Object]
+    }
+  ],
+  streams: null,
+  expiryDate: '0001-01-01T00:00:00+00:00'
+}
+Match 4: {
+  attributes: {
+    id: 'f0aa69c8-e96b-4b37-8568-8d56a567db23',
+    mapId: '/Game/Maps/Port/Port',
+    modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+    seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+  },
+  metadata: {
+    modeKey: 'bomb',
+    modeName: 'Competitive',
+    modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+    modeMaxRounds: 25,
+    isAvailable: true,
+    timestamp: '2025-03-09T02:15:58.598+00:00',
+    result: 'victory',
+    map: 'e2ad5c54-4114-a870-9641-8ea21279579a',
+    mapName: 'Icebox',
+    mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/icebox.jpg',
+    seasonName: 'V25: A2'
+  },
+  segments: [
+    {
+      type: 'overview',
+      attributes: [Object],
+      metadata: [Object],
+      expiryDate: '0001-01-01T00:00:00+00:00',
+      stats: [Object]
+    }
+  ],
+  streams: null,
+  expiryDate: '0001-01-01T00:00:00+00:00'
+}
+Match 5: {
+  attributes: {
+    id: '6c27f7ad-9dee-4c1e-ab18-5347481599f1',
+    mapId: '/Game/Maps/Pitt/Pitt',
+    modeId: '/Game/GameModes/Bomb/BombGameMode.BombGameMode_C',
+    seasonId: '16118998-4705-5813-86dd-0292a2439d90'
+  },
+  metadata: {
+    modeKey: 'bomb',
+    modeName: 'Competitive',
+    modeImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/icons/modes/normal.png',
+    modeMaxRounds: 25,
+    isAvailable: true,
+    timestamp: '2025-03-09T01:47:31.769+00:00',
+    result: 'defeat',
+    map: 'fd267378-4d1d-484f-ff52-77821ed10dc2',
+    mapName: 'Pearl',
+    mapImageUrl: 'https://trackercdn.com/cdn/tracker.gg/valorant/db/maps/7.04/pearl.jpg',
+    seasonName: 'V25: A2'
+  },
+  segments: [
+    {
+      type: 'overview',
+      attributes: [Object],
+      metadata: [Object],
+      expiryDate: '0001-01-01T00:00:00+00:00',
+      stats: [Object]
+    }
+  ],
+  streams: null,
+  expiryDate: '0001-01-01T00:00:00+00:00'
+}
+*/
 } catch (e) {
     console.log(e)
     /* Error: We could not find the player [player]. */
