@@ -4,6 +4,7 @@ import { AgentStats, GamemodesStats, SeasonStats, UserInfo } from './types/inter
 
 const BASE_URL = `https://api.tracker.gg/api/v2/valorant/standard/profile/riot/{USERNAME}%23{TAG}`;
 const MATCHES_URL = `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/{USERNAME}%23{TAG}?type=competitive&season=16118998-4705-5813-86dd-0292a2439d90&agent=all&map=all`;
+const MATCHES_URL_UNRATED = `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/{USERNAME}%23{TAG}?type=unrated&season=16118998-4705-5813-86dd-0292a2439d90&agent=all&map=all`;
 
 const fetchData = (url: string) =>
     new Promise((resolve, reject) => {
@@ -44,6 +45,12 @@ class API {
         return api;
     }
 
+    async fetchUnratedMatches(): Promise<MatchesResponse> {
+        const matchesUrl = MATCHES_URL_UNRATED.replace('{TAG}', this.tag).replace('{USERNAME}', this.username);
+        const matches = await fetchData(matchesUrl) as MatchesResponse;
+        return matches;
+    }
+    
     async fetchMatches(): Promise<MatchesResponse> {
         const matchesUrl = MATCHES_URL.replace('{TAG}', this.tag).replace('{USERNAME}', this.username);
         const matches = await fetchData(matchesUrl) as MatchesResponse;

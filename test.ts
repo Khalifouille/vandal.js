@@ -2,11 +2,11 @@ import { API } from './src/index';
 
 const test = async () => {
     try {
-        const user = await API.fetchUser('iFraan_', 'G4G');
-        const unratedStats = user.unrated();
-        console.log('Unrated stats:', unratedStats);
+        const api = await API.fetchUser('Khalifouille', 'MAR');
+        const unratedMatches = await api.fetchUnratedMatches();
+        console.log(JSON.stringify(unratedMatches, null, 2));  
     } catch (e) {
-        console.log(e);
+        console.error('Test failed:', e);
     }
 };
 
