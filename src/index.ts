@@ -68,7 +68,7 @@ class API {
     unrated(options: BaseOptions = {}) {
         const result = {} as SeasonStats;
         const raw = options.raw ?? false;
-        console.log(this._raw.data.segments); 
+        console.log(this._raw.data.segments);
         const data = this._raw.data.segments.find((x) => x.attributes?.playlist === 'unrated' || x.metadata?.name === 'Unrated');
         
         if (raw) {

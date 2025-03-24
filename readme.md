@@ -522,7 +522,7 @@ try {
         }
     }
     */
-    console.log('Matches: ', matches())
+    console.log('Matches: ', user.fetchMatches())
     /*
     Matches: [
   {
