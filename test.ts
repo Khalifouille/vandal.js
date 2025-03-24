@@ -1,13 +1,20 @@
 import { API } from './src/index';
 
-async function main() {
+const test = async () => {
     try {
-        const api = await API.fetchUser('khalifouille', 'MAR');
-        const matches = await api.fetchMatches();
-        console.log(matches);
-    } catch (err) {
-        console.error(err);
-    }
-}
+        const user = await API.fetchUser('iFraan_', 'G4G');
+        console.log('User:', user.info());
+        console.log('Ranked:', user.ranked());
+        console.log('Unrated: ', user.unrated());
+        console.log('Agents: ', user.agents());
+        console.log('ALL GAMEMODES (including deathmatch, spike-rush, etc) ', user.gamemodes());
+        console.log('Raw: ', user.raw());
 
-main();
+        const matches = await user.fetchMatches();
+        console.log('Matches:', matches);
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+test();

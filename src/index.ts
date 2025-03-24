@@ -3,11 +3,11 @@ import { BaseOptions, SegmentSeasonStats, TrackerResponse } from './types/tracke
 import { AgentStats, GamemodesStats, SeasonStats, UserInfo } from './types/internal';
 
 const BASE_URL = `https://api.tracker.gg/api/v2/valorant/standard/profile/riot/{USERNAME}%23{TAG}`;
-const MATCHES_URL = `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/Khalifouille%23MAR?type=competitive&season=16118998-4705-5813-86dd-0292a2439d90&agent=all&map=all`;
+const MATCHES_URL = `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/{USERNAME}%23{TAG}?type=competitive&season=16118998-4705-5813-86dd-0292a2439d90&agent=all&map=all`;
 
 const fetchData = (url: string) =>
     new Promise((resolve, reject) => {
-        const escapedUrl = `"${url}"`; // Échapper l'URL en l'entourant de guillemets
+        const escapedUrl = `"${url}"`; 
         exec(`curl --max-time 10 --user-agent 'Chrome/121' --url ${escapedUrl}`, (err, result) => {
             if (err) {
                 console.error(`Error fetching data from ${url}:`, err);
@@ -45,7 +45,8 @@ class API {
     }
 
     async fetchMatches() {
-        const matches = await fetchData(MATCHES_URL.replace('{TAG}', this.tag).replace('{USERNAME}', this.username));
+        const matchesUrl = MATCHES_URL.replace('{TAG}', this.tag).replace('{USERNAME}', this.username);
+        const matches = await fetchData(matchesUrl);
         return matches;
     }
 
