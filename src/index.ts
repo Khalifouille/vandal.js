@@ -3,14 +3,27 @@ import { BaseOptions, SegmentSeasonStats, TrackerResponse } from './types/tracke
 import { AgentStats, GamemodesStats, SeasonStats, UserInfo } from './types/internal';
 
 const BASE_URL = `https://api.tracker.gg/api/v2/valorant/standard/profile/riot/{USERNAME}%23{TAG}`;
+const MATCHES_URL = `https://api.tracker.gg/api/v2/valorant/standard/matches/riot/Khalifouille%23MAR?type=competitive&season=16118998-4705-5813-86dd-0292a2439d90&agent=all&map=all`;
 
 const fetchData = (url: string) =>
     new Promise((resolve, reject) => {
-        exec(`curl --max-time 5 --user-agent 'Chrome/121' --url ${url}`, (err, result) => {
-            if (!result) {
-                reject(err);
+        const escapedUrl = `"${url}"`; // Échapper l'URL en l'entourant de guillemets
+        exec(`curl --max-time 10 --user-agent 'Chrome/121' --url ${escapedUrl}`, (err, result) => {
+            if (err) {
+                console.error(`Error fetching data from ${url}:`, err);
+                return reject(err);
             }
-            resolve(JSON.parse(result));
+            if (!result) {
+                console.error(`No result returned from ${url}`);
+                return reject(new Error('No result returned'));
+            }
+            try {
+                const parsedResult = JSON.parse(result);
+                resolve(parsedResult);
+            } catch (parseError) {
+                console.error(`Error parsing JSON from ${url}:`, parseError);
+                reject(parseError);
+            }
         });
     });
 
@@ -29,6 +42,11 @@ class API {
         api._raw = (await fetchData(BASE_URL.replace('{TAG}', tag).replace('{USERNAME}', username))) as TrackerResponse;
         if (api._raw.errors) throw new Error(api._raw.errors[0].message);
         return api;
+    }
+
+    async fetchMatches() {
+        const matches = await fetchData(MATCHES_URL.replace('{TAG}', this.tag).replace('{USERNAME}', this.username));
+        return matches;
     }
 
     ranked(options: BaseOptions = {}) {

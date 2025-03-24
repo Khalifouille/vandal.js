@@ -3,3 +3,7 @@ dist/
 
 # Modules
 node_modules/
+src/index.js
+src/types/internal.js
+src/types/tracker.js
+test.js
