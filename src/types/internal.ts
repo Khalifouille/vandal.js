@@ -3,7 +3,14 @@ import { Segments, TrackerPlatformInfo, TrackerUserInfo } from './tracker';
 type SegmentValue = number | string | null;
 
 export type SeasonStats = {
-    _raw?: Segments;
+    [key: string]: any;
+    _raw?: any;
+    mapName?: string;
+    modeName?: string;
+    modeImageUrl?: string;
+    mapImageUrl?: string;
+    result?: string;
+    seasonName?: string;
     matchesPlayed: SegmentValue;
     matchesWon: SegmentValue;
     matchesLost: SegmentValue;

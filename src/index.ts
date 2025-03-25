@@ -50,7 +50,7 @@ class API {
         const matches = await fetchData(matchesUrl) as MatchesResponse;
         return matches;
     }
-    
+
     async fetchMatches(): Promise<MatchesResponse> {
         const matchesUrl = MATCHES_URL.replace('{TAG}', this.tag).replace('{USERNAME}', this.username);
         const matches = await fetchData(matchesUrl) as MatchesResponse;
@@ -75,21 +75,36 @@ class API {
     unrated(options: BaseOptions = {}) {
         const result = {} as SeasonStats;
         const raw = options.raw ?? false;
-        const data = this._raw.data.segments.find((x) => 
-            x.attributes?.playlist === 'unrated' || 
-            (x.metadata && x.metadata.name === 'Unrated')
-        );
+
+        const data = this._raw.data.segments.find((x) => x.attributes?.playlist === 'normal' || x.metadata?.name === 'Normal');
+
         if (!data) {
-            throw new Error('Unrated stats not found');
+            console.error('Aucune donnée pour les matchs non classés');
+            return result;
         }
         if (raw) {
             result._raw = data;
         }
         if (data?.stats) {
             for (const key in data.stats) {
-                result[key] = data.stats[key].value;
+                const stat = data.stats[key];
+                if (stat && stat.value !== undefined) {
+                    result[key] = stat.value;  
+                }
             }
         }
+        if (data?.attributes) {
+            const attributes = data.attributes as any;
+            if (attributes.metadata) {
+                result.mapName = attributes.metadata.mapName;  
+                result.modeName = attributes.metadata.modeName;  
+                result.modeImageUrl = attributes.metadata.modeImageUrl;  
+                result.mapImageUrl = attributes.metadata.mapImageUrl;  
+            }
+            result.result = attributes.result;  
+            result.seasonName = attributes.seasonName;  
+        }
+
         return result;
     }
 
